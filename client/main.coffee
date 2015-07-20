@@ -1,5 +1,8 @@
 m = require('mithril')
-view = require('client/view')
+Story = require('client/views/story')
 
+m.route.mode = 'hash'
 
-m.mount(document.body, view)
+m.route document.body, '/story/1',
+    '/story/:id': Story
+    #'/login': Login

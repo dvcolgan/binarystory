@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "watchify client/main.coffee -g coffeeify --extension .js --extension .coffee -o client/assets/bundle.js -dv",
+    "watch": "watchify client/main.coffee -g coffeeify --extension .js --extension .coffee -o client/assets/bundle.js -dv --poll",
     "build": "browserify client/main.coffee -g coffeeify --extension .js --extension .coffee -o client/assets/bundle.js"
   },
   "author": "David Colgan <dvcolgan@gmail.com> (http://lessboring.com)",
