@@ -2,7 +2,7 @@ from django.contrib import admin
 from story.models import StoryNode
 
 class StoryNodeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text', 'choice_a_label', 'choice_b_label', 'get_a_id', 'get_b_id')
+    list_display = ('title', 'id', 'text', 'choice_a_label', 'choice_b_label', 'get_a_id', 'get_b_id')
 
     def get_a_id(self, obj):
         if obj.choice_a is not None:

@@ -15,17 +15,22 @@ module.exports =
     view: (ctrl) ->
         node = ctrl.vm.node()
         [
-            m 'h1', 'This is a game'
-            m 'p', node.text
+            m '.left',
+                m 'h1', node.title
+                m 'p', node.text
 
-            if node.choice_a?
-                m 'p',
-                    m "a[href=/story/#{node.choice_a}]",
-                        config: m.route
-                        node.choice_a_label
-            if node.choice_b?
-                m 'p',
-                    m "a[href=/story/#{node.choice_b}]",
-                        config: m.route
-                        node.choice_b_label
+                if node.choice_a?
+                    m 'p',
+                        m "a[href=/#{node.choice_a}]",
+                            config: m.route
+                            node.choice_a_label
+                if node.choice_b?
+                    m 'p',
+                        m "a[href=/#{node.choice_b}]",
+                            config: m.route
+                            node.choice_b_label
+            m '.right',
+                if node.image?
+                    m 'img',
+                        src: node.image
         ]
