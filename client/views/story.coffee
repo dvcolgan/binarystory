@@ -30,6 +30,16 @@ module.exports =
                             config: m.route
                             node.choice_b_label
             m '.right',
+                if node.voiceover?
+                    m 'audio',
+                        autoplay: true
+                        m 'source',
+                            src: node.voiceover_mp3
+                            type: 'audio/mp3'
+                        m 'source',
+                            src: node.voiceover_ogg
+                            type: 'audio/ogg'
+
                 if node.image?
                     m 'img',
                         src: node.image
