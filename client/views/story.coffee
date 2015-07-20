@@ -30,7 +30,8 @@ module.exports =
                             config: m.route
                             node.choice_b_label
             m '.right',
-                if node.voiceover?
+                console.log(node)
+                if node.voiceover_mp3? or node.voiceover_ogg?
                     m 'audio',
                         autoplay: true
                         m 'source',
