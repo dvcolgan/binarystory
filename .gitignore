@@ -3,4 +3,5 @@ node_modules
 *.swp
 npm-debug.log
 .bundle.js
+*.sqlite
 binarystory/private.py
