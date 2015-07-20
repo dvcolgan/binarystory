@@ -1,0 +1,19 @@
+{
+  "name": "binarystory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watchify client/main.coffee -g coffeeify --extension .js --extension .coffee -o client/assets/bundle.js -dv",
+    "build": "browserify client/main.coffee -g coffeeify --extension .js --extension .coffee -o client/assets/bundle.js"
+  },
+  "author": "David Colgan <dvcolgan@gmail.com> (http://lessboring.com)",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^11.0.1",
+    "coffee-script": "^1.9.3",
+    "coffeeify": "^1.1.0",
+    "mithril": "^0.2.0",
+    "watchify": "^3.3.1"
+  }
+}
