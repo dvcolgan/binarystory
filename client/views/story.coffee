@@ -6,6 +6,21 @@ StoryNode.get = (id) ->
         method: 'GET'
         url: "/api/story/story-node/#{id}/"
 
+
+fadesIn = (element, isInitialized, context) ->
+    if not isInitialized
+        element.style.opacity = 0
+        Velocity element, {opacity: 1}
+
+fadesOutPage = (element, isInitialized, context) ->
+    if not isInitialized
+        element.onclick = (e) ->
+            e.preventDefault()
+            Velocity document.getElementsByClassName('container')[0], {opacity: 0},
+                complete: ->
+                    m.route(element.getAttribute('href'))
+
+
 module.exports =
     controller: class
         constructor: ->
@@ -16,6 +31,7 @@ module.exports =
         node = ctrl.vm.node()
         m '.wrapper ',
             m '.container',
+                config: fadesIn
                 m 'h1', node.title
 
                 if node.image?
@@ -28,12 +44,12 @@ module.exports =
                 if node.choice_a?
                     m '.choice.choice-a',
                         m "a[href=/#{node.choice_a}]",
-                            config: m.route
+                            config: fadesOutPage
                             node.choice_a_label
                 if node.choice_b?
                     m '.choice.choice-b',
                         m "a[href=/#{node.choice_b}]",
-                            config: m.route
+                            config: fadesOutPage
                             node.choice_b_label
 
                 if node.voiceover_mp3? or node.voiceover_ogg?
