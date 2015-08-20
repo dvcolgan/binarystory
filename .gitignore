@@ -5,3 +5,6 @@ npm-debug.log
 .bundle.js
 *.sqlite
 binarystory/private.py
+client/assets/story-images
+client/assets/story-voiceovers-mp3
+client/assets/story-voiceovers-ogg
