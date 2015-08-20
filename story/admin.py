@@ -1,5 +1,7 @@
 from django.contrib import admin
 from story.models import StoryNode
+from django.forms import TextInput, Textarea
+from django.db import models
 
 class StoryNodeAdmin(admin.ModelAdmin):
     list_display = ('title', 'id', 'text', 'choice_a_label', 'choice_b_label', 'get_a_id', 'get_b_id')
@@ -17,5 +19,9 @@ class StoryNodeAdmin(admin.ModelAdmin):
     get_a_id.short_description = 'Choice a id'
     get_b_id.short_description = 'Choice b id'
 
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size':'255'})},
+        models.TextField: {'widget': Textarea(attrs={'rows':10, 'cols':100})},
+    }
 
 admin.site.register(StoryNode, StoryNodeAdmin)
