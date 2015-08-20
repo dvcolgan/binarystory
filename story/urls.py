@@ -8,4 +8,9 @@ urlpatterns = patterns('story.views',
         views.StoryNodeRetrieveAPIView.as_view(),
         name='api_storynode_retrieve'
     ),
+    url(
+        r'^story-node/images/$',
+        views.AllImagesAPIView.as_view(),
+        name='api_storynode_images'
+    ),
 )
