@@ -11,9 +11,9 @@ class StoryNode(models.Model):
 
     image = models.ImageField(upload_to='client/assets/story-images/', blank=True)
     choice_a_label = models.CharField(max_length=255, blank=True)
-    choice_a = models.OneToOneField('self', related_name='parent_a', null=True, blank=True)
+    choice_a = models.ForeignKey('self', related_name='parent_a', null=True, blank=True)
     choice_b_label = models.CharField(max_length=255, blank=True)
-    choice_b = models.OneToOneField('self', related_name='parent_b', null=True, blank=True)
+    choice_b = models.ForeignKey('self', related_name='parent_b', null=True, blank=True)
 
     def __unicode__(self):
         return self.title
