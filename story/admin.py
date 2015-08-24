@@ -4,7 +4,7 @@ from django.forms import TextInput, Textarea
 from django.db import models
 
 class StoryNodeAdmin(admin.ModelAdmin):
-    list_display = ('title', 'id', 'text', 'choice_a_label', 'choice_b_label', 'get_a_id', 'get_b_id')
+    list_display = ('title', 'id', 'text', 'choice_a_label', 'choice_b_label', 'get_a_id', 'get_b_id', 'edited', 'image')
 
     def get_a_id(self, obj):
         if obj.choice_a is not None:
