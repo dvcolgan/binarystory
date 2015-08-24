@@ -15,7 +15,7 @@ class StoryNode(models.Model):
     choice_b = models.OneToOneField('self', related_name='parent_b', null=True, blank=True)
 
     def __unicode__(self):
-        return self.text
+        return self.title
 
     class Meta:
         ordering = ['id']
