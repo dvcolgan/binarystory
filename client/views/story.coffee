@@ -38,6 +38,7 @@ module.exports =
                     m '.img-container',
                         m 'img',
                             src: node.image
+                        m '.img-filter'
 
                 m 'p.node-text', node.text
 

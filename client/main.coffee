@@ -9,7 +9,5 @@ m.request
         img = new Image()
         img.src = src
 
-    setTimeout (->
-        m.route document.body, '/1',
-            '/:id': Story
-    ), 2000
+    m.route document.body, '/70',
+        '/:id': Story
