@@ -39,7 +39,7 @@ module.exports =
                         m 'img',
                             src: node.image
 
-                m 'p.node-text', node.text
+                m 'p.node-text', m.trust(node.text)
 
                 if node.choice_a?
                     m '.choice.choice-a',
